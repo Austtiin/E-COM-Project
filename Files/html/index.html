@@ -1,68 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>NorthStar Wholesale</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="./styles/style.css" rel="stylesheet">
-    </head>
-    <body>
-        <!-- This is the index page for the NorthStar Wholesale website. -->
-        <!-- It is the first page that users will see when they visit the site. -->
-         
-        <!--The page includes a title, meta tags, and a link to the CSS stylesheet.-->
-        
-        <!-- We will also create a registration page / login on index and store the information using PHP and SQL database -->
+<head>
+    <title>NorthStar Wholesale</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./styles/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Existing content -->
+    <header>
+        <!-- Logo and navigation menu-->
+        <img src="./images/NSWS_Logo.png" alt="NorthStar Wholesale Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <!--Our Structure here will be a header, main content and footer always at the bottom-->
-        <!-- A User will be instructed to login if they are not signed in already -->
-        
-        <header>
-            <!-- Logo and navigation menu-->
+    <main>
+        <div class="hero">
             <h1>Welcome to NorthStar Wholesale</h1>
+            <a href="#" class="buttonAccount" id="loginBtn">Account Login</a>
+            <a href="#" class="buttonAccount" id="registerBtn">Create an Account</a>
+        </div>
+        <!-- Existing content -->
+    </main>
 
-             <!-- Logo-->
-            <img src="./images/hero.jpg" alt="NorthStar Wholesale Logo" class="logo">
-            
-            <!-- Navigation Menu-->
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
+    <footer>
+        <p>&copy; 2021 NorthStar Wholesale. All rights reserved.</p>
+    </footer>
 
-        </header>
-        
+    <!-- Login Shadowbox -->
+    <div id="loginShadowbox" class="shadowbox">
+        <div class="shadowbox-content">
+            <span class="close" id="closeLogin">&times;</span>
+            <h2>Login</h2>
+            <form action="login.php" method="POST">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" name="email" required>
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
 
+    <!-- Register Shadowbox -->
+    <div id="registerShadowbox" class="shadowbox">
+        <div class="shadowbox-content">
+            <span class="close" id="closeRegister">&times;</span>
+            <h2>Create an Account</h2>
+            <form action="register.php" method="POST">
+                <label for="registerEmail">Email:</label>
+                <input type="email" id="registerEmail" name="email" required>
+                <label for="registerPassword">Password:</label>
+                <input type="password" id="registerPassword" name="password" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
 
-        <main>
-            <p>NorthStar Wholesale is your one-stop shop for all your wholesale needs. We offer a wide range of products at unbeatable prices. Whether you're looking for electronics, clothing, or home goods, we've got you covered. Shop with us today and experience the NorthStar difference!</p>
-            <!-- Login button-->
-            <a href="login.html" class="button">Account Login</a>
-
-            <!-- Register button-->
-            <a href="register.html" class="button">Create an Account</a>
-
-            <!-- Hero Picture -->
-            <img src="./images/hero.jpg" alt="NorthStar Wholesale Hero Image" class="hero">
-
-            <!-- My Favorite song at the moment-->
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3gZMZVAkAqKuPD8zkufDJh?utm_source=generator" width="50%" 
-            height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        
-            <!-- Our Team and RV Market hero pictures-->
-            <img src="images/team.jpg" alt="NorthStar Wholesale Team" class="team">
-            <img src="./images/RV.jpg" alt="RV Market" class="rv">
-
-
-
-        </main>
-        
-        <!-- Keep footer always at the bottom-->
-            <p>&copy; 2021 NorthStar Wholesale. All rights reserved.</p>
-        </footer>
-
-    </body>
+    <script src="./scripts/main.js"></script>
+</body>
 </html>
