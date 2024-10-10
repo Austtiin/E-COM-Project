@@ -34,7 +34,7 @@ jobs:
           action: "upload"
           app_location: "Files/html" # Correct folder for your HTML files
           api_location: "" # Keep empty if no API
-          output_location: "Files/html" # Specify where your built app files are located
+          output_location: "" # Specify where your built app files are located
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
