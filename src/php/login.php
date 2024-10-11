@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['loggedin'] = true;
         echo '<script>sessionStorage.setItem("loggedin", "true"); window.location.href = "products.html";</script>';
     } else {
+        
         echo 'Invalid credentials';
     }
 
