@@ -32,7 +32,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GENTLE_FIELD_0F65FA710 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "Files/html" # Correct folder for your HTML files
+          app_location: "src" # Correct folder for your HTML files
           api_location: "" # Keep empty if no API
           output_location: "" # Specify where your built app files are located
 
