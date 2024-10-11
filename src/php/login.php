@@ -1,19 +1,25 @@
 <?php
 session_start();
+require 'db_connection.php'; // Include your database connection file
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = $_POST['email'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Dummy credentials for testing
-    $validEmail = 'admin';
-    $validPassword = '1';
+    // Prepare and execute the SQL query
+    $stmt = $conn->prepare("SELECT * FROM `users` WHERE `username` = ? AND `password` = ?");
+    $stmt->bind_param("ss", $username, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if ($email === $validEmail && $password === $validPassword) {
+    if ($result->num_rows > 0) {
         $_SESSION['loggedin'] = true;
         echo '<script>sessionStorage.setItem("loggedin", "true"); window.location.href = "index.html";</script>';
     } else {
         echo 'Invalid credentials';
     }
+
+    $stmt->close();
+    $conn->close();
 }
 ?>
