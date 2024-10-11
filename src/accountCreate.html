@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login - NorthStar Wholesale</title>
+    <title>Create Account - NorthStar Wholesale</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./styles/style.css" rel="stylesheet">
@@ -18,19 +18,23 @@
             <li><a href="./contact.html">Contact</a></li>
         </ul>
     </nav>
+</header>
 
 <body>
     <main>
-        <div class="login-container">
-            <h3>Login</h3>
-            <form action="login.php" method="POST">
-                <label for="loginUsername">Username:</label>
-                <input type="text" id="loginUsername" name="username" required>
+        <div class="account-create-container">
+            <h3>Create Account</h3>
+            <form action="create_account.php" method="POST">
+                <label for="createUsername">Username:</label>
+                <input type="text" id="createUsername" name="username" required>
                 <br>
-                <label for="loginPassword">Password:</label>
-                <input type="password" id="loginPassword" name="password" required>
+                <label for="createPassword">Password:</label>
+                <input type="password" id="createPassword" name="password" required>
                 <br>
-                <button type="submit">Login</button>
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirm_password" required>
+                <br>
+                <button type="submit">Create Account</button>
             </form>
         </div>
     </main>

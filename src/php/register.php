@@ -1,24 +1,25 @@
 <?php
-$servername = "e-com-dev-mysql.mysql.database.azure.com";
-$username = "AdminAustin";
-$password = "Baseball00!";
-$dbname = "users";
+session_start();
+require './db_conn_users.php'; // Include the existing database connection file
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+// Get user input
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$sql = "INSERT INTO `users`.`users' (Username, PasswordHash) VALUES ('$username', '$password')";
+// Hash the password
+$passwordHash = password_hash($password, PASSWORD_BCRYPT);
 
-if ($conn->query($sql) === TRUE) {
+// Prepare and bind
+$stmt = $conn->prepare("INSERT INTO users (Username, PasswordHash) VALUES (?, ?)");
+$stmt->bind_param("ss", $username, $passwordHash);
+
+// Execute the statement
+if ($stmt->execute() === TRUE) {
     echo "Registration successful!";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . $stmt->error;
 }
 
+// Close the statement and connection
+$stmt->close();
 $conn->close();
