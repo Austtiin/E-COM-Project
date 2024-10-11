@@ -1,25 +1,19 @@
 <?php
-$servername = "e-com-dev-mysql.mysql.database.azure.com";
-$username = "AdminAustin";
-$password = "Baseball00!";
-$dbname = "users";
+session_start();
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    // Dummy credentials for testing
+    $validEmail = 'admin';
+    $validPassword = '1';
+
+    if ($email === $validEmail && $password === $validPassword) {
+        $_SESSION['loggedin'] = true;
+        echo '<script>sessionStorage.setItem("loggedin", "true"); window.location.href = "index.html";</script>';
+    } else {
+        echo 'Invalid credentials';
+    }
 }
-
-$username = $_POST['username'];
-$password = $_POST['password'];
-
-$sql = "SELECT * FROM `users`.`users` WHERE Username = '$username' AND PasswordHash='$password'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    echo "Login successful!";
-} else {
-    echo "Invalid email or password.";
-}
-
-$conn->close();
+?>
