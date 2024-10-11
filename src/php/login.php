@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'db_connection.php'; // Include your database connection file
+require './db_conn.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($result->num_rows > 0) {
         $_SESSION['loggedin'] = true;
-        echo '<script>sessionStorage.setItem("loggedin", "true"); window.location.href = "index.html";</script>';
+        echo '<script>sessionStorage.setItem("loggedin", "true"); window.location.href = "products.html";</script>';
     } else {
         echo 'Invalid credentials';
     }
@@ -22,4 +22,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->close();
     $conn->close();
 }
-?>
