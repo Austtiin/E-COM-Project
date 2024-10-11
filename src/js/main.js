@@ -1,33 +1,35 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const loginBtn = document.getElementById('loginBtn');
-    const registerBtn = document.getElementById('registerBtn');
-    const loginShadowbox = document.getElementById('loginShadowbox');
-    const registerShadowbox = document.getElementById('registerShadowbox');
-    const closeLogin = document.getElementById('closeLogin');
-    const closeRegister = document.getElementById('closeRegister');
+document.addEventListener('DOMContentLoaded', function() {
+    var loginModal = document.getElementById('loginModal');
+    var registerModal = document.getElementById('registerModal');
 
-    loginBtn.addEventListener('click', () => {
-        loginShadowbox.style.display = 'block';
-    });
+    var loginBtn = document.getElementById('loginBtn');
+    var registerBtn = document.getElementById('registerBtn');
 
-    registerBtn.addEventListener('click', () => {
-        registerShadowbox.style.display = 'block';
-    });
+    var closeLogin = document.getElementById('closeLogin');
+    var closeRegister = document.getElementById('closeRegister');
 
-    closeLogin.addEventListener('click', () => {
-        loginShadowbox.style.display = 'none';
-    });
+    loginBtn.onclick = function() {
+        loginModal.style.display = 'block';
+    }
 
-    closeRegister.addEventListener('click', () => {
-        registerShadowbox.style.display = 'none';
-    });
+    registerBtn.onclick = function() {
+        registerModal.style.display = 'block';
+    }
 
-    window.addEventListener('click', (event) => {
-        if (event.target === loginShadowbox) {
-            loginShadowbox.style.display = 'none';
+    closeLogin.onclick = function() {
+        loginModal.style.display = 'none';
+    }
+
+    closeRegister.onclick = function() {
+        registerModal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == loginModal) {
+            loginModal.style.display = 'none';
         }
-        if (event.target === registerShadowbox) {
-            registerShadowbox.style.display = 'none';
+        if (event.target == registerModal) {
+            registerModal.style.display = 'none';
         }
-    });
+    }
 });
