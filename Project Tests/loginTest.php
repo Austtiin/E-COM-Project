@@ -8,8 +8,8 @@ class LoginTest extends TestCase
 
     protected function setUp(): void
     {
-        $servername = "e-com-dev-mysql.mysql.database.azure.com";
-        $username = "AdminAustin";
+        $servername = "e-com-dev-server.mysql.database.azure.com";
+        $username = "hlsguvphvt";
         $password = "Baseball00!";
         $dbname = "users";
 
@@ -24,6 +24,10 @@ class LoginTest extends TestCase
     {
         $this->conn->close();
     }
+
+
+
+
 
     public function testValidLogin()
     {

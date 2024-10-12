@@ -1,1 +1,1 @@
-{"version":1,"defects":{"LoginTest::testValidLogin":7,"LoginTest::testInvalidLogin":8},"times":{"LoginTest::testValidLogin":0.031,"LoginTest::testInvalidLogin":0.029}}
+{"version":1,"defects":{"LoginTest::testValidLogin":8,"LoginTest::testInvalidLogin":8,"ProductTest::testLoadProducts":8,"ProductTest::testProductFields":7},"times":{"LoginTest::testValidLogin":0.032,"LoginTest::testInvalidLogin":0.024,"ProductTest::testLoadProducts":0.026,"ProductTest::testProductFields":0.024}}
