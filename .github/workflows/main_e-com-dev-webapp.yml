@@ -71,5 +71,5 @@ jobs:
         with:
           app-name: 'e-com-dev-webapp'
           slot-name: 'Production'
-          package: .
+          package: '.../root'
           
