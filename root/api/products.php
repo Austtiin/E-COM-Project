@@ -1,9 +1,18 @@
 <?php
-require './php/db_conn_products.php';
+require '../php/db_conn_products.php'; // Ensure this path is correct for your setup
 
 header('Content-Type: application/json');
 
-$sql = "SELECT id, name, price, image FROM products";
+// Correct the SQL query by removing the extra comma
+$sql = "SELECT `product`.`productID`,
+    `product`.`productName`,
+    `product`.`productPrice`,
+    `product`.`productIMG`,
+    `product`.`productDesc`,
+    `product`.`productCategory`,
+    `product`.`productStock`
+FROM `products`.`product`;";
+
 $result = $conn->query($sql);
 
 $products = array();

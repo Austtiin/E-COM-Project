@@ -1,3 +1,13 @@
+/* Root variables for easy theme updates */
+:root {
+    --main-bg-color: #000;
+    --main-text-color: #fff;
+    --accent-color: #ff0000;
+    --button-bg-color: #070707;
+    --button-text-color: #fff;
+    --secondaru-bg-color: #fff;
+}
+
 /* Reset some default browser styles */
 * {
     margin: 0;
@@ -8,8 +18,8 @@
 /* Body styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
     line-height: 1.6;
     font-size: 1rem;
 }
@@ -23,18 +33,18 @@ body {
 
 /* Header styling */
 header {
-    background: #fefefe;
-    color: #fefefe;
+    background: var(--secondaru-bg-color);
     padding: 2rem 0;
     text-align: center;
-    border-bottom: #ff0000 3px solid;
+    border-bottom: var(--accent-color) 3px solid;
 }
 
 header a {
-    color: #ff0000;
+    color: var(--accent-color);
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1rem;
+    transition: color 0.3s;
 }
 
 header ul {
@@ -48,6 +58,12 @@ header li {
     padding: 0 1rem;
 }
 
+/* Navigation hover effects */
+header a:hover {
+    color: var(--main-bg-color);
+    background-color: var(--accent-color);
+}
+
 /* Main content styling */
 main {
     padding: 2rem;
@@ -58,8 +74,8 @@ main {
 
 /* Footer styling */
 footer {
-    background: #000;
-    color: #ff0000;
+    background: var(--main-bg-color);
+    color: var(--accent-color);
     text-align: center;
     padding: 2rem;
     margin-top: 2rem;
@@ -80,26 +96,27 @@ footer p {
 /* Button styling */
 .buttonAccount {
     background-color: transparent;
-    color: #040404;
-    border: 1px solid #070707;
+    color: var(--main-bg-color);
+    border: 1px solid var(--main-bg-color);
     padding: 5px 30px;
-    border-radius: 5px;
+    border-radius: 3px;
     cursor: pointer;
     text-align: center;
     display: inline-block;
     transition: background 0.3s, color 0.3s;
+    margin: 1%;
 }
 
 .buttonAccount:hover {
-    background: #070707;
-    color: #fff;
+    background: var(--button-bg-color);
+    color: var(--button-text-color);
 }
 
 /* General button styling */
 button {
     background: transparent;
-    border: 2px solid #ff0000;
-    color: #ff0000;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
     padding: 0.5rem 1rem;
     cursor: pointer;
     font-size: 1rem;
@@ -108,8 +125,8 @@ button {
 }
 
 button:hover {
-    background: #ff0000;
-    color: #070707;
+    background: var(--accent-color);
+    color: var(--main-bg-color);
 }
 
 /* Logo styling */
@@ -135,10 +152,10 @@ button:hover {
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
-    padding: 20px;
+    padding: 10%;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
+    width: 90vw;
+    max-width: 400px;
     text-align: center;
 }
 
@@ -154,4 +171,52 @@ button:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Product container styling */
+.product-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.product {
+    display: inline-block;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    width: 150px;
+    height: 150px;
+}
+
+.product h4 {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.product p {
+    font-size: 1.1rem;
+    color: var(--main-bg-color);
+}
+
+@media (max-width: 768px) {
+    .product-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-content {
+        width: 100vw;
+        padding: 5%;
+    }
 }
