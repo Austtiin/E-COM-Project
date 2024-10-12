@@ -8,20 +8,20 @@
 </head>
 <body>
     <header>
-        <a href="./index.html"><img src="./images/NSWS_Logo.png" alt="NorthStar Wholesale logo" class="logo"></a>
+        <a href="./index.php"><img src="./images/NSWS_Logo.png" alt="NorthStar Wholesale logo" class="logo"></a>
         <nav>
             <ul>
-                <li><a href="./home.html">Home</a></li>
-                <li><a href="./products.html">Products</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./home.php">Home</a></li>
+                <li><a href="./products.php">Products</a></li>
+                <li><a href="./about.php">About</a></li>
+                <li><a href="./contact.php">Contact</a></li>
             </ul>
         </nav>
         
         <div class="hero">
             <h2>Welcome to NorthStar Wholesale</h2>
-            <a href="./login.html" class="buttonAccount" id="loginBtn">Account Login</a>
-            <a href="./login.html" class="buttonAccount" id="registerBtn">Create an Account</a>
+            <a href="./login.php" class="buttonAccount" id="loginBtn">Account Login</a>
+            <a href="./register.php" class="buttonAccount" id="registerBtn">Create an Account</a>
         </div>
 
         <iframe 
@@ -75,7 +75,7 @@
     </script>
 
     <footer>
-        <p>&copy; 2021 NorthStar Wholesale. All rights reserved.</p>
+        <p>&copy; 2024 NorthStar Wholesale. All rights reserved.</p>
     </footer>
 </body>
 </html>
