@@ -1,9 +1,8 @@
 <?php
-require '../php/db_conn_products.php'; // Ensure this path is correct for your setup
+require '../php/db_conn_products.php';
 
 header('Content-Type: application/json');
 
-// Correct the SQL query by removing the extra comma
 $sql = "SELECT `product`.`productID`,
     `product`.`productName`,
     `product`.`productPrice`,
@@ -18,7 +17,7 @@ $result = $conn->query($sql);
 $products = array();
 
 if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch_assoc()) {
         $products[] = $row;
     }
 }

@@ -1,3 +1,15 @@
+<!-- index.php -->
+<!-- This file is the main page of the website. It displays the header, main content, and footer. -->
+
+<!--Austin Stephens
+Rasmussen University
+E-COM - CDA4859C-01
+Professor Corey
+-->
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
