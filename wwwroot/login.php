@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login - NorthStar Wholesale</title>
+    <title>NorthStar Wholesale</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./styles/style.css" rel="stylesheet">
 </head>
-
-<!--Nav Bar and header-->
-<header>
-    <img src="./images/NSWS_Logo.png" alt="NorthStar Wholesale logo" class="logo">
-    <nav>
-        <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./products.html">Products</a></li>
-            <li><a href="./about.html">About</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
+<body>
+    <header>
+        <a href="./index.php"><img src="./images/NSWS_Logo.png" alt="NorthStar Wholesale logo" class="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="./home.php">Home</a></li>
+                <li><a href="./products.php">Products</a></li>
+                <li><a href="./about.php">About</a></li>
+                <li><a href="./contact.php">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="hero">
+            <h2>Welcome to NorthStar Wholesale</h2>
+            <a href="./login.php" class="buttonAccount" id="loginBtn">Account Login</a>
+            <a href="./register.php" class="buttonAccount" id="registerBtn">Create an Account</a>
+        </div>
 <body>
     <main>
         <div class="login-container">

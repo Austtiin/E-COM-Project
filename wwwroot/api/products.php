@@ -1,5 +1,5 @@
 <?php
-require '../db_conn.php';
+require './wwwroot/php/db_conn_products.php';
 
 header('Content-Type: application/json');
 
