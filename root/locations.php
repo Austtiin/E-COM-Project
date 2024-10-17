@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Login - E-ComDesign</title>
+    <title>Warehouse Locations - E-ComDesign</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style1.css">
 </head>
@@ -44,22 +44,35 @@
     </nav>
 
     <div class="container py-5">
-        <h2 class="text-center mb-4">Dealer Login</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
+        <h2 class="text-center mb-4">Our Warehouse Locations</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="assets/img/location1.jpg" class="card-img-top" alt="Warehouse Location 1">
                     <div class="card-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-primary-custom">Login</button>
-                        </form>
+                        <h5 class="card-title">Dallas, TX</h5>
+                        <p class="card-text">Address: 123 Main St, Dallas, TX 75001</p>
+                        <p class="card-text">Operating Hours: 9 AM - 6 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="assets/img/location2.jpg" class="card-img-top" alt="Warehouse Location 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Phoenix, AZ</h5>
+                        <p class="card-text">Address: 456 Elm St, Phoenix, AZ 85001</p>
+                        <p class="card-text">Operating Hours: 8 AM - 5 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="assets/img/location3.jpg" class="card-img-top" alt="Warehouse Location 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Chicago, IL</h5>
+                        <p class="card-text">Address: 789 Oak St, Chicago, IL 60601</p>
+                        <p class="card-text">Operating Hours: 10 AM - 7 PM</p>
                     </div>
                 </div>
             </div>

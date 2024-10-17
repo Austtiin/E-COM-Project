@@ -1,105 +1,126 @@
-<!-- index.php -->
-<!-- This file is the main page of the website. It displays the header, main content, and footer. -->
-
-<!--Austin Stephens
-Rasmussen University
-E-COM - CDA4859C-01
-Professor Corey
--->
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>NorthStar Wholesale</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="./styles/style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>E-ComDesign</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style1.css">
 </head>
 
 <body>
-    <header>
-        <a href=""><img src="./images/NSWS_Logo.png" alt="NorthStar Wholesale logo" class="logo"></a>
-        <nav>
-            <ul>
-                <li><a href="./home.php">Home</a></li>
-                <li><a href="./products.php">Products</a></li>
-                <li><a href="./about.php">About</a></li>
-                <li><a href="./contact.php">Contact</a></li>
+<nav class="navbar navbar-light navbar-expand-md navbar-secondary">
+        <div class="container-fluid justify-content-center">
+            <img class="img-fluid navbar-logo" src="assets/img/NSWS_Logo.png" alt="NSWS Logo">
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-light navbar-expand-md navbar-custom py-3 justify-content-center">
+        <div class="container">
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+                <ul class="navbar-nav text-center">
+                    <li class="nav-item">
+                        <a onclick="location.href='./why-us.php'" class="nav-link active animated" href="">Why Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active animated" onclick="location.href='./locations.php'">Warehouse Locations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active animated" onclick="location.href='./about.php'">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active animated" onclick="location.href='./contact.php'">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active animated" onclick="location.href='./login.php'">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Section -->
+    <div class="container py-4 py-xl-5">
+        <section class="py-4 text-center">
+            <h3 class="text-uppercase fw-bold mb-3">Ready to discover better pricing?</h3>
+            <div class="section-banner"></div>
+        </section>
+    </div>
+
+    <!-- Cards Section -->
+    <section>
+        <div class="container h-100 position-relative" style="top: -50px;">
+            <div class="row gy-5 row-cols-1 row-cols-md-2 row-cols-lg-3">
+                <!-- Card 1 -->
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body pt-5 p-4">
+                            <img src="assets/img/LippertLogo3c_charcoalgreyredorangetransparent_RGB.svg" alt="Lippert Logo">
+                            <h4 class="card-title">Lippert</h4>
+                            <p class="text-muted card-subtitle mb-2">Lippert Parts offers a wide range of aftermarket, factory, and accessory products to meet various needs.</p>
+                        </div>
+                        <div class="card-footer p-4 py-3">
+                            <a href="#">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body pt-5 p-4">
+                            <img src="assets/img/logoheaddark_large.avif" alt="Patriot Hitches Logo">
+                            <h4 class="card-title">Patriot Hitches</h4>
+                            <p class="text-muted card-subtitle mb-2">Patriot Hitches offers patented trailer hitches that solve common frustrations.</p>
+                        </div>
+                        <div class="card-footer p-4 py-3">
+                            <a href="#">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body pt-5 p-4">
+                            <img src="assets/img/download.png" alt="Dometic Logo">
+                            <h4 class="card-title">Dometic</h4>
+                            <p class="text-muted card-subtitle mb-2">Dometic is a leading manufacturer of camping gear, RV toilets, and refrigerators.</p>
+                        </div>
+                        <div class="card-footer p-4 py-3">
+                            <a href="#">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Banner -->
+    <div class="border rounded hero-banner d-flex flex-column justify-content-center align-items-center p-4 py-5">
+        <div class="text-center">
+            <h1 class="text-uppercase fw-bold">Sourcing solutions so you don't have to.</h1>
+            <button class="btn btn-primary btn-primary-custom" onclick="location.href='login.php'" type="button">Dealer login</button>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="text-center py-4">
+        <div class="container">
+            <p class="mb-0 text-muted">© 2024 NorthStar Wholesale. All rights reserved.</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#" class="text-muted">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="#" class="text-muted">Terms of Service</a></li>
+                <li class="list-inline-item"><a href="#" class="text-muted">Contact Us</a></li>
             </ul>
-        </nav>
-
-        <div class="hero">
-            <h2>Welcome to NorthStar Wholesale</h2>
-            <a href="./login.php" class="buttonAccount" id="loginBtn">Account Login</a>
-            <a href="./register.php" class="buttonAccount" id="registerBtn">Create an Account</a>
         </div>
-    </header>
-
-    <main>
-        <!--products that are loaded from sql database-->
-        <div class="product-container">
-            <h3>Featured Products</h3>
-            <div id="products"></div>
-        </div>
-    </main>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('./api/products.php')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-
-                    const productsContainer = document.getElementById('products');
-
-                    data.forEach(product => {
-                        const productDiv = document.createElement('div');
-                        productDiv.classList.add('product');
-
-                        const productImg = document.createElement('img');
-                        productImg.src = product.productIMG;
-
-                        const productName = document.createElement('h4');
-                        productName.textContent = product.productName;
-
-                        const productPrice = document.createElement('p');
-                        productPrice.textContent = `$${product.productPrice}`;
-
-                        const addToCartButton = document.createElement('button');
-                        addToCartButton.textContent = 'Add to Cart';
-
-                        productDiv.appendChild(productImg);
-                        productDiv.appendChild(productName);
-                        productDiv.appendChild(productPrice);
-                        productDiv.appendChild(addToCartButton);
-
-                        productsContainer.appendChild(productDiv);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error fetching products:', error);
-                    document.getElementById('products').innerHTML = '<p>Unable to load products at this time. Please try again later.</p>';
-                });
-        });
-    </script>
-
-    <footer>
-        <iframe style="border-radius:12px"
-            src="https://open.spotify.com/embed/track/3gZMZVAkAqKuPD8zkufDJh?utm_source=generator"
-            width="250" height="152" frameBorder="0" allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-        </iframe>
-        <p>&copy; 2024 NorthStar Wholesale. All rights reserved.</p>
-
     </footer>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

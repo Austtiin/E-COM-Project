@@ -1,0 +1,43 @@
+/* dashboard.css */
+
+body {
+    background-color: #f8f9fa; /* Light gray background for better contrast */
+}
+
+.product {
+    background-color: #ffffff; /* White background for products */
+    border: 1px solid #e0e0e0; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding around content */
+    text-align: center; /* Center align text */
+    transition: transform 0.2s; /* Smooth scaling on hover */
+}
+
+.product:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.product img {
+    max-height: 200px; /* Limit image height */
+    object-fit: cover; /* Ensure image covers space nicely */
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.product h4 {
+    font-size: 1.25rem; /* Larger font for product names */
+    margin-bottom: 10px; /* Space below product name */
+}
+
+.product p {
+    font-size: 1rem; /* Normal font size for price */
+    margin-bottom: 15px; /* Space below price */
+}
+
+.btn {
+    width: 100%; /* Full width button */
+    padding: 10px; /* Padding for better clickability */
+}
+
+.product button {
+    background-color: brown;
+}
