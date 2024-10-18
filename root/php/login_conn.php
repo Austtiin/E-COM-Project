@@ -8,31 +8,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Prepare a select statement
     $stmt = $conn->prepare("SELECT UserID, passwordHash FROM users.users WHERE Username = ?");
+    if (!$stmt) {
+        echo json_encode(['success' => false, 'message' => 'Database statement prep failed: ' . $conn->error]);
+        exit();
+    }
+    
     $stmt->bind_param("s", $username);
-    $stmt->execute();
+    if (!$stmt->execute()) {
+        echo json_encode(['success' => false, 'message' => 'Execution failed: ' . $stmt->error]);
+        exit();
+    }
+    
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
         $stmt->bind_result($UserID, $passwordHash);
         $stmt->fetch();
 
-        $passwordHash = password_hash($passwordHash, PASSWORD_DEFAULT);
-        //if the password is verified, the user will be logged in
-        if (password_verify($password, $passwordHash)) {
+        // Verify the password
+        if ($password ==$passwordHash){ // Use password_verify for hashed passwords
+            session_regenerate_id(true);
             $_SESSION['username'] = $username;
             $_SESSION['UserID'] = $UserID;
             echo json_encode(['success' => true, 'message' => 'Login successful']);
-
-        //else if the password is invalid, the user will be prompted to enter a valid password
         } else {
-            echo json_encode(['success' => false, 'message' => 'Invalid password', 'retrieved_password' => $passwordHash]);
+            echo json_encode(['success' => false, 'message' => 'Invalid password']);
         }
-
-        //else if the username is invalid, the user will be prompted to enter a valid username
     } else {
-        echo json_encode(['success' => false, 'message' => 'Invalid username', 'retrieved_username' => $username]);
+        echo json_encode(['success' => false, 'message' => 'Invalid username']);
     }
-
 
     $stmt->close();
     $conn->close();
@@ -40,3 +44,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: login.php");
     exit();
 }
+

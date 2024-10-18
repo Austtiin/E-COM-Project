@@ -48,7 +48,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <img src="assets/img/location1.jpg" class="card-img-top" alt="Warehouse Location 1">
+                    <img src="assets/img/texas-tx-state-flag-in-map-shape-icon-vector-46106387.jpg" class="card-img-top" alt="Warehouse Location 1">
                     <div class="card-body">
                         <h5 class="card-title">Dallas, TX</h5>
                         <p class="card-text">Address: 123 Main St, Dallas, TX 75001</p>
@@ -58,7 +58,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <img src="assets/img/location2.jpg" class="card-img-top" alt="Warehouse Location 2">
+                    <img src="assets/img/images.png" class="card-img-top" alt="Warehouse Location 2">
                     <div class="card-body">
                         <h5 class="card-title">Phoenix, AZ</h5>
                         <p class="card-text">Address: 456 Elm St, Phoenix, AZ 85001</p>
@@ -68,7 +68,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <img src="assets/img/location3.jpg" class="card-img-top" alt="Warehouse Location 3">
+                    <img src="assets/img/LOGO-CHICAGO-horizontal.png" class="card-img-top" alt="Warehouse Location 3">
                     <div class="card-body">
                         <h5 class="card-title">Chicago, IL</h5>
                         <p class="card-text">Address: 789 Oak St, Chicago, IL 60601</p>

@@ -15,7 +15,6 @@
             <img class="img-fluid navbar-logo" src="assets/img/NSWS_Logo.png" alt="NSWS Logo">
         </div>
     </nav>
-
     <nav class="navbar navbar-light navbar-expand-md navbar-custom py-3 justify-content-center">
         <div class="container">
             <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarMenu">
@@ -49,17 +48,18 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <form>
+                        <form id="loginForm" method="POST">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" required>
+                                <input type="text" class="form-control" id="username" required aria-label="Username" placeholder="Enter your username">
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" required>
+                                <input type="password" class="form-control" id="password" required aria-label="Password" placeholder="Enter your password">
                             </div>
                             <button type="submit" class="btn btn-primary btn-primary-custom">Login</button>
                         </form>
+                        <div id="loginMessage" class="text-center mt-3"></div>
                     </div>
                 </div>
             </div>
@@ -73,6 +73,42 @@
     </footer>
 
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
 
+        const formData = new FormData(this);
+
+        fetch('./php/login_conn.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok: ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const loginMessage = document.getElementById('loginMessage');
+
+            if (data.success) {
+                loginMessage.textContent = data.message + ' You are now logged in.';
+                loginMessage.style.color = 'green';
+                // Optionally redirect to another page
+                // window.location.href = 'dashboard.php';
+            } else {
+                loginMessage.textContent = `Login failed: ${data.message}`;
+                loginMessage.style.color = 'red';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            const loginMessage = document.getElementById('loginMessage');
+            loginMessage.textContent = 'An error occurred: ' + error.message;
+            loginMessage.style.color = 'red';
+        });
+    });
+</script>
+</body>
 </html>

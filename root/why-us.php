@@ -50,7 +50,7 @@
         <div class="row mt-5">
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <img src="assets/img/quality_parts.jpg" class="card-img-top" alt="Quality Parts">
+                    <img src="assets/img/71LKzbeLTtL._AC_UF350,350_QL80_.jpg" class="card-img-top" alt="Quality Parts">
                     <div class="card-body">
                         <h5 class="card-title">High-Quality Parts</h5>
                         <p class="card-text">We source our parts from reputable manufacturers to ensure that our customers receive only the best quality products for their RVs.</p>
@@ -59,7 +59,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <img src="assets/img/competitive_pricing.jpg" class="card-img-top" alt="Competitive Pricing">
+                    <img src="assets/img/71LKzbeLTtL._AC_UF350,350_QL80_.jpg" class="card-img-top" alt="Competitive Pricing">
                     <div class="card-body">
                         <h5 class="card-title">Competitive Pricing</h5>
                         <p class="card-text">Our pricing is designed to be competitive, making it easier for dealers to maximize their margins while providing value to their customers.</p>
@@ -68,7 +68,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <img src="assets/img/customer_service.jpg" class="card-img-top" alt="Excellent Customer Service">
+                    <img src="assets/img/71LKzbeLTtL._AC_UF350,350_QL80_.jpg" class="card-img-top" alt="Excellent Customer Service">
                     <div class="card-body">
                         <h5 class="card-title">Exceptional Customer Service</h5>
                         <p class="card-text">Our knowledgeable team is always ready to assist with any inquiries or support needed to help you succeed in your business.</p>
@@ -80,7 +80,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <img src="assets/img/fast_shipping.jpg" class="card-img-top" alt="Fast Shipping">
+                    <img src="assets/img/71LKzbeLTtL._AC_UF350,350_QL80_.jpg" class="card-img-top" alt="Fast Shipping">
                     <div class="card-body">
                         <h5 class="card-title">Fast Shipping Options</h5>
                         <p class="card-text">We offer various shipping options to ensure that you receive your parts quickly, helping you meet your customers' demands.</p>
@@ -89,7 +89,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <img src="assets/img/partnership.jpg" class="card-img-top" alt="Strong Partnerships">
+                    <img src="assets/img/71LKzbeLTtL._AC_UF350,350_QL80_.jpg" class="card-img-top" alt="Strong Partnerships">
                     <div class="card-body">
                         <h5 class="card-title">Strong Partnerships</h5>
                         <p class="card-text">Our relationships with top manufacturers allow us to provide exclusive products and promotions that benefit our dealers.</p>
@@ -98,7 +98,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <img src="assets/img/community_support.jpg" class="card-img-top" alt="Community Support">
+                    <img src="assets/img/71LKzbeLTtL._AC_UF350,350_QL80_.jpg" class="card-img-top" alt="Community Support">
                     <div class="card-body">
                         <h5 class="card-title">Community Support</h5>
                         <p class="card-text">We believe in giving back to the RV community and support local events and initiatives to strengthen our relationships with dealers.</p>

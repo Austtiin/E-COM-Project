@@ -7,12 +7,13 @@
     <title>Dashboard - NorthStar Wholesale</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style1.css">
-    <link rel="stylesheet" href="assets/css/dashboard.css"> <!-- Updated CSS for Dashboard -->
+    <link rel="stylesheet" href="assets/css/dashboard.css">
 </head>
 
 <body>
 
-<nav class="navbar navbar-light navbar-expand-md navbar-secondary">
+    <!-- Navbar -->
+    <nav class="navbar navbar-light navbar-expand-md navbar-secondary">
         <div class="container-fluid justify-content-center">
             <img class="img-fluid navbar-logo" src="assets/img/NSWS_Logo.png" alt="NSWS Logo">
         </div>
@@ -26,7 +27,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
                 <ul class="navbar-nav text-center">
                     <li class="nav-item">
-                        <a onclick="location.href='./why-us.php'" class="nav-link active animated" href="">Why Us</a>
+                        <a class="nav-link active animated" onclick="location.href='./why-us.php'">Why Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active animated" onclick="location.href='./locations.php'">Warehouse Locations</a>
@@ -45,10 +46,10 @@
         </div>
     </nav>
 
+
     <div class="container py-5">
         <h2 class="text-center mb-4">Product Dashboard</h2>
-        
-        <!-- Search and Filter Section -->
+
         <div class="row mb-4">
             <div class="col-md-4">
                 <input type="text" id="searchBar" class="form-control" placeholder="Search Products" />
@@ -56,7 +57,12 @@
             <div class="col-md-4">
                 <select id="categoryFilter" class="form-select">
                     <option value="">All Categories</option>
-                    <!-- Categories will be populated here -->
+                    <option value="Category1">Category 1</option>
+                    <option value="Category2">Category 2</option>
+                    <option value="Category3">Category 3</option>
+                    
+
+
                 </select>
             </div>
             <div class="col-md-4">
@@ -70,124 +76,118 @@
             </div>
         </div>
 
-        <div id="products" class="row"></div> <!-- Container for Products -->
-    </div>
+        
 
-    <footer>
-        <iframe style="border-radius:12px"
-            src="https://open.spotify.com/embed/track/3gZMZVAkAqKuPD8zkufDJh?utm_source=generator"
-            width="250" height="152" frameBorder="0" allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-        </iframe>
-        <p>&copy; 2024 NorthStar Wholesale. All rights reserved.</p>
-    </footer>
+<!-- Start display-->
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="products"></tbody>
+        </table>
 
-    <script>
-        let allProducts = []; // Array to hold all products
+        <footer>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3gZMZVAkAqKuPD8zkufDJh?utm_source=generator"
+                width="250" height="152" frameBorder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+            </iframe>
+            <p>&copy; 2024 NorthStar Wholesale. All rights reserved.</p>
+        </footer>
 
-        // Fetch products and categories on load
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('./api/products.php')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    allProducts = data; // Store fetched products
-                    populateProducts(allProducts);
-                    return fetch('./api/categories.php'); // Fetch categories from server
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(categories => {
-                    const categoryFilter = document.getElementById('categoryFilter');
-                    categories.forEach(category => {
-                        const option = document.createElement('option');
-                        option.value = category.id; // Assuming category object has an id
-                        option.textContent = category.name; // Assuming category object has a name
-                        categoryFilter.appendChild(option);
+
+
+        <!-- JavaScript for Product Filters -->
+        <script>
+            let allProducts = [];
+
+            document.addEventListener('DOMContentLoaded', function() {
+                // Fetch Products
+                fetch('./api/products.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data); // Logs the API response to the console
+                        allProducts = data; // Assuming the data is directly the array of products
+
+                        if (allProducts.length === 0) {
+                            document.getElementById('products').innerHTML = '<p class="text-warning">No products available at this time.</p>';
+                            return;
+                        }
+
+                        populateProducts(allProducts); // Function to display products on the page
+                    })
+                    .catch(error => {
+                        console.error('Error fetching data:', error); // Logs any fetch errors
+                        document.getElementById('products').innerHTML = '<p class="text-danger">Unable to load products at this time. Please try again later.</p>';
                     });
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-                    document.getElementById('products').innerHTML = '<p class="text-danger">Unable to load products at this time. Please try again later.</p>';
-                });
 
-            // Event listeners for filters
-            document.getElementById('searchBar').addEventListener('input', filterProducts);
-            document.getElementById('categoryFilter').addEventListener('change', filterProducts);
-            document.getElementById('priceFilter').addEventListener('change', filterProducts);
-        });
+                function populateProducts(products) {
+                    const productsContainer = document.getElementById('products');
+                    productsContainer.innerHTML = '';
 
-        function populateProducts(products) {
-            const productsContainer = document.getElementById('products');
-            productsContainer.innerHTML = ''; // Clear previous products
+                    products.forEach(product => {
+                        const productRow = document.createElement('tr'); // Create a new table row
 
-            products.forEach(product => {
-                const productDiv = document.createElement('div');
-                productDiv.classList.add('product', 'col-md-4', 'mb-4');
+                        const productImgCell = document.createElement('td'); // Create a cell for the image
+                        const productImg = document.createElement('img');
+                        productImg.src = product.productIMG;
+                        productImg.alt = product.productName;
+                        productImg.classList.add('img-fluid', 'product-img'); // Add a class for styling
+                        productImgCell.appendChild(productImg); // Add image to cell
 
-                const productImg = document.createElement('img');
-                productImg.src = product.productIMG;
-                productImg.alt = product.productName;
-                productImg.classList.add('img-fluid');
+                        const productNameCell = document.createElement('td'); // Create a cell for the product name
+                        productNameCell.textContent = product.productName;
 
-                const productName = document.createElement('h4');
-                productName.textContent = product.productName;
+                        const productDescriptionCell = document.createElement('td'); // Create a cell for the product description
+                        productDescriptionCell.textContent = product.productDescription || "No description available"; // Default text if no description
 
-                const productPrice = document.createElement('p');
-                productPrice.textContent = `$${product.productPrice}`;
+                        const productPriceCell = document.createElement('td'); // Create a cell for the product price
+                        productPriceCell.textContent = `$${product.productPrice}`;
 
-                const productCategory = document.createElement('p');
-                productPrice.textContent = product.productCategory;
+                        productRow.appendChild(productImgCell); // Add cells to the row
+                        productRow.appendChild(productNameCell);
+                        productRow.appendChild(productDescriptionCell);
+                        productRow.appendChild(productPriceCell);
 
-                const addToCartButton = document.createElement('button');
-                addToCartButton.textContent = 'Add to Cart';
-                addToCartButton.classList.add('btn', 'btn-primary');
+                        productsContainer.appendChild(productRow); // Add the row to the table body
+                    });
+                }
 
-                productDiv.appendChild(productImg);
-                productDiv.appendChild(productName);
-                productDiv.appendChild(productPrice);
-                productDiv.appendChild(addToCartButton);
-                productDiv.appendChild(productCategory);
-                productsContainer.appendChild(productDiv);
+
+                // Add event listeners to filter inputs
+                document.getElementById('searchBar').addEventListener('input', filterProducts);
+                document.getElementById('categoryFilter').addEventListener('change', filterProducts);
+                document.getElementById('priceFilter').addEventListener('change', filterProducts);
+
+                function filterProducts() {
+                    const searchTerm = document.getElementById('searchBar').value.toLowerCase();
+                    const selectedCategory = document.getElementById('categoryFilter').value;
+                    const selectedPrice = document.getElementById('priceFilter').value;
+
+                    const filteredProducts = allProducts.filter(product => {
+                        const matchesSearch = product.productName.toLowerCase().includes(searchTerm);
+                        const matchesCategory = selectedCategory ? product.productCategory.toLowerCase() === selectedCategory.toLowerCase() : true;
+
+                        const priceInRange = (price) => {
+                            if (selectedPrice === "") return true;
+                            const [min, max] = selectedPrice.split('-').map(Number);
+                            return (price >= min && (max ? price <= max : true));
+                        };
+                        const matchesPrice = priceInRange(product.productPrice);
+
+                        return matchesSearch && matchesCategory && matchesPrice;
+                    });
+
+                    populateProducts(filteredProducts);
+                }
             });
-        }
+        </script>
 
-        function filterProducts() {
-            const searchTerm = document.getElementById('searchBar').value.toLowerCase();
-            const selectedCategory = document.getElementById('categoryFilter').value;
-            const selectedPrice = document.getElementById('priceFilter').value;
-
-            const filteredProducts = allProducts.filter(product => {
-                // Filter by search term
-                const matchesSearch = product.productName.toLowerCase().includes(searchTerm);
-
-                // Filter by category
-                const matchesCategory = selectedCategory ? product.productCategory === selectedCategory : true; // Assuming product has categoryId
-
-                // Filter by price
-                const priceInRange = (price) => {
-                    if (selectedPrice === "") return true; // No price filter
-                    const [min, max] = selectedPrice.split('-').map(Number);
-                    return (price >= min && (max ? price <= max : true));
-                };
-                const matchesPrice = priceInRange(product.productPrice);
-
-                return matchesSearch && matchesCategory && matchesPrice;
-            });
-
-            populateProducts(filteredProducts);
-        }
-    </script>
-
-    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -47,7 +47,7 @@
         <h2 class="text-center mb-4">About NorthStar Wholesale</h2>
         <p class="text-center">At NorthStar Wholesale, we pride ourselves on providing superior pricing for RV parts. Our extensive inventory and partnerships with top manufacturers allow us to offer competitive rates that benefit our dealers and customers alike.</p>
         <div class="text-center">
-            <img src="assets/img/about_us.jpg" alt="About Us" class="img-fluid" style="max-width: 600px;">
+            <img src="assets/img/NSWS_Logo.png" alt="About Us" class="img-fluid" style="max-width: 600px;">
         </div>
         <div class="mt-4">
             <h4>Why Choose Us?</h4>
