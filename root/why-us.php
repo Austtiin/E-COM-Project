@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-light navbar-expand-md navbar-secondary">
+    <nav class="navbar navbar-light navbar-expand-md navbar-secondary">
         <div class="container-fluid justify-content-center">
             <img class="img-fluid navbar-logo" src="assets/img/NSWS_Logo.png" alt="NSWS Logo">
         </div>
@@ -46,7 +46,7 @@
     <div class="container py-5">
         <h2 class="text-center mb-4">Why Choose NorthStar Wholesale?</h2>
         <p class="text-center">At NorthStar Wholesale, we understand the RV industry and are committed to providing the best products and services to our dealers. Here’s why we stand out:</p>
-        
+
         <div class="row mt-5">
             <div class="col-md-4">
                 <div class="card mb-4">

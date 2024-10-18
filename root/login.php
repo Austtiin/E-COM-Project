@@ -95,7 +95,7 @@
             if (data.success) {
                 loginMessage.textContent = data.message + ' You are now logged in.';
                 loginMessage.style.color = 'green';
-                // Optionally redirect to another page
+                // redirect to another page
                 // window.location.href = 'dashboard.php';
             } else {
                 loginMessage.textContent = `Login failed: ${data.message}`;

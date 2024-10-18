@@ -106,22 +106,22 @@
             let allProducts = [];
 
             document.addEventListener('DOMContentLoaded', function() {
-                // Fetch Products
+                
                 fetch('./api/products.php')
                     .then(response => response.json())
                     .then(data => {
-                        console.log(data); // Logs the API response to the console
-                        allProducts = data; // Assuming the data is directly the array of products
+                        console.log(data); 
+                        allProducts = data;
 
                         if (allProducts.length === 0) {
                             document.getElementById('products').innerHTML = '<p class="text-warning">No products available at this time.</p>';
                             return;
                         }
 
-                        populateProducts(allProducts); // Function to display products on the page
+                        populateProducts(allProducts); // this displays our products
                     })
                     .catch(error => {
-                        console.error('Error fetching data:', error); // Logs any fetch errors
+                        console.error('Error fetching data:', error);
                         document.getElementById('products').innerHTML = '<p class="text-danger">Unable to load products at this time. Please try again later.</p>';
                     });
 
@@ -130,30 +130,30 @@
                     productsContainer.innerHTML = '';
 
                     products.forEach(product => {
-                        const productRow = document.createElement('tr'); // Create a new table row
+                        const productRow = document.createElement('tr'); 
 
-                        const productImgCell = document.createElement('td'); // Create a cell for the image
+                        const productImgCell = document.createElement('td'); 
                         const productImg = document.createElement('img');
                         productImg.src = product.productIMG;
                         productImg.alt = product.productName;
-                        productImg.classList.add('img-fluid', 'product-img'); // Add a class for styling
-                        productImgCell.appendChild(productImg); // Add image to cell
+                        productImg.classList.add('img-fluid', 'product-img'); 
+                        productImgCell.appendChild(productImg);
 
-                        const productNameCell = document.createElement('td'); // Create a cell for the product name
+                        const productNameCell = document.createElement('td'); 
                         productNameCell.textContent = product.productName;
 
-                        const productDescriptionCell = document.createElement('td'); // Create a cell for the product description
-                        productDescriptionCell.textContent = product.productDescription || "No description available"; // Default text if no description
+                        const productDescriptionCell = document.createElement('td'); 
+                        productDescriptionCell.textContent = product.productDescription || "No description available"; 
 
-                        const productPriceCell = document.createElement('td'); // Create a cell for the product price
+                        const productPriceCell = document.createElement('td');
                         productPriceCell.textContent = `$${product.productPrice}`;
 
-                        productRow.appendChild(productImgCell); // Add cells to the row
+                        productRow.appendChild(productImgCell);
                         productRow.appendChild(productNameCell);
                         productRow.appendChild(productDescriptionCell);
                         productRow.appendChild(productPriceCell);
 
-                        productsContainer.appendChild(productRow); // Add the row to the table body
+                        productsContainer.appendChild(productRow); 
                     });
                 }
 
