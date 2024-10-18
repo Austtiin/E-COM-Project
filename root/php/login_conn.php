@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->fetch();
 
         // Verify the password
-        if ($password ==$passwordHash){ // Use password_verify for hashed passwords
+        if ($password ==$passwordHash){ // We would use password_verify for hashed passwords
             session_regenerate_id(true);
             $_SESSION['username'] = $username;
             $_SESSION['UserID'] = $UserID;

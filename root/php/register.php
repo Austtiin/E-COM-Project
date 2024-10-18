@@ -1,6 +1,6 @@
 <?php
 session_start();
-require './db_conn_users.php'; // Include the existing database connection file
+require './db_conn_users.php';
 
 
 $username = $_POST['username'];

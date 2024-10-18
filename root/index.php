@@ -43,7 +43,7 @@
         </div>
     </nav>
 
-    <!-- Banner Section -->
+
     <div class="container py-4 py-xl-5">
         <section class="py-4 text-center">
             <h3 class="text-uppercase fw-bold mb-3">Ready to discover better pricing?</h3>
@@ -55,7 +55,7 @@
     <section>
         <div class="container h-100 position-relative" style="top: -50px;">
             <div class="row gy-5 row-cols-1 row-cols-md-2 row-cols-lg-3">
-                <!-- Card 1 -->
+               
                 <div class="col">
                     <div class="card">
                         <div class="card-body pt-5 p-4">
@@ -69,7 +69,6 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="col">
                     <div class="card">
                         <div class="card-body pt-5 p-4">
@@ -83,7 +82,7 @@
                     </div>
                 </div>
 
-                <!-- Card 3 -->
+               
                 <div class="col">
                     <div class="card">
                         <div class="card-body pt-5 p-4">
@@ -100,7 +99,7 @@
         </div>
     </section>
 
-    <!-- Hero Banner -->
+    
     <div class="border rounded hero-banner d-flex flex-column justify-content-center align-items-center p-4 py-5">
         <div class="text-center">
             <h1 class="text-uppercase fw-bold">Sourcing solutions so you don't have to.</h1>
@@ -108,7 +107,7 @@
         </div>
     </div>
 
-    <!-- Footer Section -->
+    
     <footer class="text-center py-4">
         <div class="container">
             <p class="mb-0 text-muted">© 2024 NorthStar Wholesale. All rights reserved.</p>

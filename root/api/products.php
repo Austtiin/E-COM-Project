@@ -16,7 +16,7 @@ $result = $conn->query($sql);
 
 $products = array();
 
-// Check if the query was successful
+//Check if sucsessful
 if ($result) {
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
