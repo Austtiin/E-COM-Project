@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-light navbar-expand-md navbar-secondary">
+    <nav class="navbar navbar-light navbar-expand-md navbar-secondary">
         <div class="container-fluid justify-content-center">
             <img class="img-fluid navbar-logo" src="assets/img/NSWS_Logo.png" alt="NSWS Logo">
         </div>
@@ -75,41 +75,42 @@
 
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault(); 
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-        const formData = new FormData(this);
+            const formData = new FormData(this);
 
-        fetch('./php/login_conn.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok: ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            const loginMessage = document.getElementById('loginMessage');
+            fetch('./php/login_conn.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok: ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const loginMessage = document.getElementById('loginMessage');
 
-            if (data.success) {
-                loginMessage.textContent = data.message + ' You are now logged in.';
-                loginMessage.style.color = 'green';
-                // redirect to another page
-                // window.location.href = 'dashboard.php';
-            } else {
-                loginMessage.textContent = `Login failed: ${data.message}`;
-                loginMessage.style.color = 'red';
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            const loginMessage = document.getElementById('loginMessage');
-            loginMessage.textContent = 'An error occurred: ' + error.message;
-            loginMessage.style.color = 'red';
+                    if (data.success) {
+                        loginMessage.textContent = data.message + ' You are now logged in.';
+                        loginMessage.style.color = 'green';
+                        // redirect to another page
+                        // window.location.href = 'dashboard.php';
+                    } else {
+                        loginMessage.textContent = `Login failed: ${data.message}`;
+                        loginMessage.style.color = 'red';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    const loginMessage = document.getElementById('loginMessage');
+                    loginMessage.textContent = 'An error occurred: ' + error.message;
+                    loginMessage.style.color = 'red';
+                });
         });
-    });
-</script>
+    </script>
 </body>
+
 </html>

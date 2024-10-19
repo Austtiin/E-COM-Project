@@ -1,98 +1,100 @@
 body {
-    background: linear-gradient(rgb(255, 255, 255) 0%, #ffffff 100%);
+  background: linear-gradient(rgb(255, 255, 255) 0%, #ffffff 100%);
 }
 
 .navbar-custom {
-    background-color: rgb(255, 255, 255);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    color: rgb(252, 252, 252);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgb(255, 255, 255);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: rgb(252, 252, 252);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-logo {
-    height: 93px;
-    filter: brightness(200%) contrast(200%);
-    margin: 10px 0;
+  height: 93px;
+  filter: brightness(200%) contrast(200%);
+  margin: 10px 0;
 }
 
 .navbar-nav {
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
-    gap: 25px;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 25px;
 }
 
 .nav-item {
-    position: relative;
-    margin-right: 20px;
+  position: relative;
+  margin-right: 20px;
 }
 
 .navbar-nav .nav-item a {
-    margin: 0;
-    color: rgb(255, 255, 255); 
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    text-decoration: none; 
+  margin: 0;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  text-decoration: none;
 }
 
 .navbar-nav .nav-item a:hover {
-    color: rgba(255, 84, 73, 1); 
-    text-decoration: underline;
-    cursor: pointer;
+  color: rgba(255, 84, 73, 1);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .navbar-secondary {
-    background: rgba(0, 0, 0, 0.386); 
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    height: 147px;
-    background-image: url('../img/subtle\ RV\ tire\ tracks\ to\ use\ as\ a\ websitre\ background_.jpg');
-    background-size: cover;
-    background-position: center;
+  background: rgba(0, 0, 0, 0.386);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 147px;
+  background-image: url("../img/subtle\ RV\ tire\ tracks\ to\ use\ as\ a\ websitre\ background_.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .navbar-toggler {
-    background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .btn-primary-custom {
-    background: rgb(255, 84, 73);
-    border-radius: 3px;
-    border: none;
-    transition: background-color 0.3s ease;
+  background: rgb(255, 84, 73);
+  border-radius: 3px;
+  border: none;
+  transition: background-color 0.3s ease;
 }
 
 .btn-primary-custom:hover {
-    background-color: rgb(118, 118, 118);
+  background-color: rgb(118, 118, 118);
 }
 
 .card img {
-    max-width: 121px;
+  max-width: 121px;
 }
 
 .section-banner {
-    background: url('../img/about-warehouse.jpg') center / cover;
-    height: 335px;
-    border-radius: 3px;
+  background: url("../img/about-warehouse.jpg") center / cover;
+  height: 335px;
+  border-radius: 3px;
 }
 
 .hero-banner {
-    background: linear-gradient(rgba(0, 0, 0, 0.11), #00000036 98%), linear-gradient(rgba(255, 0, 0, 0.2), rgba(219, 255, 0, 0.2) 99%), url('assets/img/RV.jpg') center / cover;
-    height: 350px;
+  background: linear-gradient(rgba(0, 0, 0, 0.11), #00000036 98%),
+    linear-gradient(rgba(255, 0, 0, 0.2), rgba(219, 255, 0, 0.2) 99%),
+    url("assets/img/RV.jpg") center / cover;
+  height: 350px;
 }
 
 footer {
-    background-color: rgb(0, 0, 0); 
-    color: white; 
+  background-color: rgb(0, 0, 0);
+  color: white;
 }
 
 footer a {
-    color: rgba(255, 255, 255, 0.8); 
-    transition: color 0.3s ease;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: rgba(255, 84, 73, 1);
+  color: rgba(255, 84, 73, 1);
 }

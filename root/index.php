@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-light navbar-expand-md navbar-secondary">
+    <nav class="navbar navbar-light navbar-expand-md navbar-secondary">
         <div class="container-fluid justify-content-center">
             <img class="img-fluid navbar-logo" src="assets/img/NSWS_Logo.png" alt="NSWS Logo">
         </div>
@@ -55,7 +55,7 @@
     <section>
         <div class="container h-100 position-relative" style="top: -50px;">
             <div class="row gy-5 row-cols-1 row-cols-md-2 row-cols-lg-3">
-               
+
                 <div class="col">
                     <div class="card">
                         <div class="card-body pt-5 p-4">
@@ -82,7 +82,7 @@
                     </div>
                 </div>
 
-               
+
                 <div class="col">
                     <div class="card">
                         <div class="card-body pt-5 p-4">
@@ -99,7 +99,7 @@
         </div>
     </section>
 
-    
+
     <div class="border rounded hero-banner d-flex flex-column justify-content-center align-items-center p-4 py-5">
         <div class="text-center">
             <h1 class="text-uppercase fw-bold">Sourcing solutions so you don't have to.</h1>
@@ -107,7 +107,7 @@
         </div>
     </div>
 
-    
+
     <footer class="text-center py-4">
         <div class="container">
             <p class="mb-0 text-muted">© 2024 NorthStar Wholesale. All rights reserved.</p>

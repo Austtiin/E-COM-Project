@@ -7,10 +7,10 @@ $sql = "SELECT `product`.`productID`,
     `product`.`productName`,
     `product`.`productPrice`,
     `product`.`productIMG`,
-    `product`.`productDesc` AS `productDescription`,  /* Adjusted this alias */
+    `product`.`productDesc` AS `productDescription`,
     `product`.`productCategory`,
     `product`.`productStock`
-FROM `product`;";  /* Changed to correct table name */
+FROM `product`;";
 
 $result = $conn->query($sql);
 

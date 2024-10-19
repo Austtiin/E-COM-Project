@@ -12,7 +12,7 @@
 
 <body>
 
-    <!-- Navbar -->
+
     <nav class="navbar navbar-light navbar-expand-md navbar-secondary">
         <div class="container-fluid justify-content-center">
             <img class="img-fluid navbar-logo" src="assets/img/NSWS_Logo.png" alt="NSWS Logo">
@@ -49,7 +49,7 @@
     <div class="container py-5">
         <h2 class="text-center mb-4">Product Dashboard</h2>
 
-        <!-- Search and Filter Options -->
+
         <div class="row mb-4">
             <div class="col-md-4">
                 <input type="text" id="searchBar" class="form-control" placeholder="Search Products" />
@@ -73,7 +73,7 @@
             </div>
         </div>
 
-        <!-- Product Display Table -->
+
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
@@ -87,13 +87,13 @@
             <tbody id="products"></tbody>
         </table>
 
-        <!-- Footer with Spotify Embed -->
+
         <footer class="text-center py-3">
             <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3gZMZVAkAqKuPD8zkufDJh?utm_source=generator" width="250" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             <p>&copy; 2024 NorthStar Wholesale. All rights reserved.</p>
         </footer>
 
-        <!-- JavaScript for Product Filters -->
+
         <script>
             let allProducts = [];
 

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-light navbar-expand-md navbar-secondary">
+    <nav class="navbar navbar-light navbar-expand-md navbar-secondary">
         <div class="container-fluid justify-content-center">
             <img class="img-fluid navbar-logo" src="assets/img/NSWS_Logo.png" alt="NSWS Logo">
         </div>

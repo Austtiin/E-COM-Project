@@ -1,29 +1,28 @@
-
 table {
-    width: 100%;
-    max-height: 20px;
-    table-layout: fixed;  
+  width: 100%;
+  max-height: 20px;
+  table-layout: fixed;
 }
 
-table th, table td {
-    text-align: center;
-    vertical-align: middle;
-    word-wrap: break-word;
+table th,
+table td {
+  text-align: center;
+  vertical-align: middle;
+  word-wrap: break-word;
 }
 
 .product-img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
 
 table tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 
 table tbody tr:nth-child(even) {
-    background-color: #e6cece;
+  background-color: #e6cece;
 }
-
