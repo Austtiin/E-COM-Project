@@ -24,24 +24,25 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
                 <ul class="navbar-nav text-center">
                     <li class="nav-item">
-                        <a onclick="location.href='./why-us.php'" class="nav-link active animated" href="">Why Us</a>
+                        <a href='./why-us.php' class="nav-link active animated" href="">Why Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active animated" onclick="location.href='./locations.php'">Warehouse Locations</a>
+                        <a class="nav-link active animated" href='./locations.php'>Warehouse Locations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active animated" onclick="location.href='./about.php'">About Us</a>
+                        <a class="nav-link active animated" href='./about.php'>About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active animated" onclick="location.href='./contact.php'">Contact</a>
+                        <a class="nav-link active animated" href='./contact.php'>Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active animated" onclick="location.href='./login.php'">Login</a>
+                        <a class="nav-link active animated" href='./login.php'>Login</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
 
     <div class="container py-5">
         <h2 class="text-center mb-4">Why Choose NorthStar Wholesale?</h2>

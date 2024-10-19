@@ -1,151 +1,29 @@
-#products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
-}
 
-.product-row {
-    flex: 0 0 calc(33.333% - 20px);
-    margin-bottom: 20px;
-}
-
-.product {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.product:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-}
-
-.product img {
-    max-height: 180px;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border-radius: 5px;
-}
-
-.product h5 {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    color: #333;
-}
-
-.product p {
-    font-size: 1rem;
-    margin: 10px 0;
-    color: #666;
-}
-
-.btn {
+table {
     width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    max-height: 20px;
+    table-layout: fixed;  
 }
 
-.btn:hover {
-    background-color: #0056b3;
-}
-
-.product-row:nth-child(even) {
-    background-color: rgba(255, 0, 0, 0.1);
-}
-
-.product-row:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.table th,
-.table td {
+table th, table td {
     text-align: center;
     vertical-align: middle;
-    padding: 15px;
-    height: 120px;
+    word-wrap: break-word;
 }
 
 .product-img {
-    max-width: 100px;
-    max-height: 80px;
+    width: 50px;
+    height: 50px;
     object-fit: cover;
+    display: block;
+    margin: 0 auto;
 }
 
-.table {
-    width: 100%;
-    border-collapse: collapse;
+table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
 }
 
-.table th,
-.table td {
-    text-align: center;
-    vertical-align: middle;
-    padding: 15px;
-    height: 20px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    border: 1px solid #e0e0e0;
+table tbody tr:nth-child(even) {
+    background-color: #e6cece;
 }
 
-.table th:nth-child(1),
-.table td:nth-child(1) {
-    width: 100px;
-}
-
-.table th:nth-child(2),
-.table td:nth-child(2) {
-    width: 200px;
-}
-
-.table th:nth-child(3),
-.table td:nth-child(3) {
-    width: 250px;
-}
-
-.table th:nth-child(4),
-.table td:nth-child(4) {
-    width: 100px;
-}
-
-.product-img {
-    max-width: 80px;
-    max-height: 80px;
-    object-fit: cover;
-}
-
-.table th {
-    background-color: #f8f9fa;
-}
-
-.table tr:nth-child(even) {
-    background-color: rgba(255, 0, 0, 0.1);
-}
-
-.table tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.table-hover tbody tr:hover {
-    background-color: rgba(0, 123, 255, 0.1);
-}
-
-footer {
-    text-align: center;
-    padding: 20px 0;
-}

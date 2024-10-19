@@ -7,33 +7,30 @@ $sql = "SELECT `product`.`productID`,
     `product`.`productName`,
     `product`.`productPrice`,
     `product`.`productIMG`,
-    `product`.`productDesc`,
+    `product`.`productDesc` AS `productDescription`,  /* Adjusted this alias */
     `product`.`productCategory`,
     `product`.`productStock`
-FROM `products`.`product`;";
+FROM `product`;";  /* Changed to correct table name */
 
 $result = $conn->query($sql);
 
 $products = array();
 
-//Check if sucsessful
+// Check if successful
 if ($result) {
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             $products[] = $row;
         }
     } else {
-        // If no rows were returned, send an empty array
         $products = [];
     }
 } else {
-    // If the query failed, log the error and return a 500 response
     http_response_code(500);
-    echo json_encode(['error' => 'Failed to get products from database.']);
+    echo json_encode(['error' => 'Failed to get products from the database.']);
     exit;
 }
 
 echo json_encode($products);
 
 $conn->close();
-
