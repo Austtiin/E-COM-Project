@@ -8,7 +8,7 @@ if (!isset($_GET['id'])) {
 }
 
 $productID = intval($_GET['id']);
-$sql = "SELECT `productID`, `productName`, `productPrice`, `productIMG`, `productDesc`, `productStock` FROM `product` WHERE `productID` = ?";
+$sql = "SELECT `productID`, `productName`, `productPrice`, `productIMG`, `productDesc`, `productFeature`, `productStock` FROM `product` WHERE `productID` = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('i', $productID);
 $stmt->execute();
@@ -41,6 +41,7 @@ $product = $result->fetch_assoc();
         <p><strong>Price:</strong> $<?php echo htmlspecialchars($product['productPrice']); ?></p>
         <p><strong>Description:</strong> <?php echo htmlspecialchars($product['productDesc']); ?></p>
         <p><strong>Stock:</strong> <?php echo htmlspecialchars($product['productStock']); ?></p>
+        <p></p><strong>Feature:</strong> <?php echo htmlspecialchars($product['productFeature']); ?></p>
 
         <form id="addToCartForm" action="cart.php" method="POST">
             <div class="mb-3">

@@ -9,7 +9,8 @@ $sql = "SELECT `product`.`productID`,
     `product`.`productIMG`,
     `product`.`productDesc` AS `productDescription`,
     `product`.`productCategory`,
-    `product`.`productStock`
+    `product`.`productStock`,
+    `product`.`productFeature`
 FROM `product`;";
 
 $result = $conn->query($sql);

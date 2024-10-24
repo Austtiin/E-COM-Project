@@ -108,8 +108,9 @@
                             populateProducts(allProducts);
                         }
                     })
+                    // Catch any errors and display a message this means the server is not running
                     .catch(error => {
-                        document.getElementById('products').innerHTML = '<p class="text-danger">Unable to load products at this time. Please try again later.</p>';
+                        document.getElementById('products').innerHTML = '<p class="text-danger">Unable to get products right now?</p>';
                     });
 
                 function populateProducts(products) {
