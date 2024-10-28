@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
                 <ul class="navbar-nav text-center">
                     <li class="nav-item">
-                        <a href='./why-us.php' class="nav-link active animated" href="">Why Us</a>
+                        <a href='./why-us.php' class="nav-link active animated">Why Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active animated" href='./locations.php'>Warehouse Locations</a>
@@ -37,6 +37,9 @@
                     <li class="nav-item">
                         <a class="nav-link active animated" href='./login.php'>Login</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active animated" href='./logout.php'>Logout</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -49,14 +52,14 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <form id="loginForm" method="POST">
+                        <form id="loginForm" action="./php/login_conn.php" method="POST">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" required aria-label="Username" placeholder="Enter your username">
+                                <input type="text" class="form-control" id="username" name="username" required aria-label="Username" placeholder="Enter your username">
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" required aria-label="Password" placeholder="Enter your password">
+                                <input type="password" class="form-control" id="password" name="password" required aria-label="Password" placeholder="Enter your password">
                             </div>
                             <button type="submit" class="btn btn-primary btn-primary-custom">Login</button>
                         </form>
@@ -96,8 +99,11 @@
                     if (data.success) {
                         loginMessage.textContent = data.message + ' You are now logged in.';
                         loginMessage.style.color = 'green';
-                        // redirect to another page
-                        // window.location.href = 'dashboard.php';
+
+                        //simple transition to dashboard
+                        setTimeout(() => {
+                            window.location.href = 'dashboard.php';
+                        }, 2000);
                     } else {
                         loginMessage.textContent = `Login failed: ${data.message}`;
                         loginMessage.style.color = 'red';

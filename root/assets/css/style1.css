@@ -2,6 +2,7 @@ body {
   background: linear-gradient(rgb(255, 255, 255) 0%, #ffffff 100%);
 }
 
+/* Navbar styles (if applicable) */
 .navbar-custom {
   background-color: rgb(255, 255, 255);
   border-bottom-left-radius: 20px;
@@ -48,7 +49,7 @@ body {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   height: 147px;
-  background-image: url("../img/subtle\ RV\ tire\ tracks\ to\ use\ as\ a\ websitre\ background_.jpg");
+  background-image: url("../img/subtle RV tire tracks to use as a website background_.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -97,4 +98,46 @@ footer a {
 
 footer a:hover {
   color: rgba(255, 84, 73, 1);
+}
+
+/* Cart styles */
+.cart-container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.cart-item:last-child {
+  border-bottom: none; /* Remove border from last item */
+}
+
+.product-name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.product-details {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.back-button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: rgb(255, 84, 73);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.back-button:hover {
+  background: rgb(118, 118, 118);
 }

@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
                 <ul class="navbar-nav text-center">
                     <li class="nav-item">
-                        <a href='./why-us.php' class="nav-link active animated" href="">Why Us</a>
+                        <a href='./why-us.php' class="nav-link active animated">Why Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active animated" href='./locations.php'>Warehouse Locations</a>
@@ -37,6 +37,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active animated" href='./login.php'>Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active animated" href='./logout.php'>Logout</a>
                     </li>
                 </ul>
             </div>

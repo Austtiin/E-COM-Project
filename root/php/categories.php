@@ -3,7 +3,7 @@ require '../php/db_conn_products.php';
 
 header('Content-Type: application/json');
 
-$sql = "SELECT `productCategory` FROM `products`.`product` GROUP BY `productCategory`;";
+$sql = "SELECT `productCategory` FROM `products` GROUP BY `productCategory`;";
 
 
 $result = $conn->query($sql);

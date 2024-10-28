@@ -11,7 +11,7 @@ class LoginTest extends TestCase
         $servername = "e-com-dev-server.mysql.database.azure.com";
         $username = "hlsguvphvt";
         $password = "Baseball00!";
-        $dbname = "users";
+        $dbname = "nsw_db";
 
         $this->conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -24,10 +24,6 @@ class LoginTest extends TestCase
     {
         $this->conn->close();
     }
-
-
-
-
 
     public function testValidLogin()
     {
@@ -50,4 +46,40 @@ class LoginTest extends TestCase
 
         $this->assertEquals(0, $result->num_rows, "Login should fail for invalid credentials.");
     }
+
+    public function testEmptyUsername()
+    {
+        $username = '';
+        $password = 'somePassword';
+
+        $sql = "SELECT * FROM `users`.`users` WHERE Username = '$username' AND PasswordHash='$password'";
+        $result = $this->conn->query($sql);
+
+        $this->assertEquals(0, $result->num_rows, "Login should fail for empty username.");
+    }
+
+    public function testEmptyPassword()
+    {
+        $username = 'someUser';
+        $password = '';
+
+        $sql = "SELECT * FROM `users`.`users` WHERE Username = '$username' AND PasswordHash='$password'";
+        $result = $this->conn->query($sql);
+
+        $this->assertEquals(0, $result->num_rows, "Login should fail for empty password.");
+    }
+
+    public function testSqlInjection()
+    {
+        $username = 'admin';
+        $password = "' OR '1'='1";
+
+        $sql = "SELECT * FROM `users`.`users` WHERE Username = '$username' AND PasswordHash='$password'";
+        $result = $this->conn->query($sql);
+
+        $this->assertEquals(0, $result->num_rows, "Login should fail for SQL injection attempt.");
+    }
 }
+    {
+        $this->conn->close();
+    }

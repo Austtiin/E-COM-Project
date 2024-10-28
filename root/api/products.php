@@ -1,17 +1,22 @@
 <?php
+// products.php
+// This file is used to get all the products from the database and return them as JSON
+
+
+
 require '../php/db_conn_products.php';
 
 header('Content-Type: application/json');
 
-$sql = "SELECT `product`.`productID`,
-    `product`.`productName`,
-    `product`.`productPrice`,
-    `product`.`productIMG`,
-    `product`.`productDesc` AS `productDescription`,
-    `product`.`productCategory`,
-    `product`.`productStock`,
-    `product`.`productFeature`
-FROM `product`;";
+$sql = "SELECT `productID`,
+    `productName`,
+    `productPrice`,
+    `productIMG`,
+    `productDesc` AS `productDescription`,
+    `productCategory`,
+    `productStock`,
+    `productFeature`
+FROM `products`;";
 
 $result = $conn->query($sql);
 

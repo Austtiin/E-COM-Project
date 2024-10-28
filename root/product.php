@@ -8,7 +8,7 @@ if (!isset($_GET['id'])) {
 }
 
 $productID = intval($_GET['id']);
-$sql = "SELECT `productID`, `productName`, `productPrice`, `productIMG`, `productDesc`, `productFeature`, `productStock` FROM `product` WHERE `productID` = ?";
+$sql = "SELECT `productID`, `productName`, `productPrice`, `productIMG`, `productDesc`, `productFeature`, `productStock` FROM `products` WHERE `productID` = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('i', $productID);
 $stmt->execute();
