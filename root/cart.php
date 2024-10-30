@@ -58,7 +58,7 @@
             fetch('./api/get_cart.php')
                 .then(response => {
                     console.log('Response received:', response);
-                    return response.text(); // Get the response as text
+                    return response.text();
                 })
                 .then(text => {
                     console.log('Response text:', text);
@@ -88,7 +88,7 @@
                                 totalPrice += item.productPrice * item.quantity;
                             });
 
-                            // Update total price
+                            
                             document.getElementById('total-price').innerText = totalPrice.toFixed(2);
 
                             // Add event listeners to quantity inputs
@@ -114,6 +114,8 @@
                 });
         });
 
+
+        // Function to update the quantity of a product in the cart
         function updateQuantity(productId, newQuantity) {
             fetch('./api/update_cart.php', {
                 method: 'POST',
@@ -126,6 +128,9 @@
             .then(data => {
                 if (data.success) {
                     console.log('Quantity updated successfully');
+
+
+                    
                     // Recalculate total price
                     let totalPrice = 0;
                     document.querySelectorAll('.list-group-item').forEach(item => {
