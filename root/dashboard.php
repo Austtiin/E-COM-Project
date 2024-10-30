@@ -51,9 +51,6 @@ if (!isset($_SESSION['username'])) {
                         <a class="nav-link active animated" href='./contact.php'>Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active animated" href='./login.php'>Login</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link active animated" href='./logout.php'>Logout</a>
                     </li>
 
